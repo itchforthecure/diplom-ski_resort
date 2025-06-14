@@ -1,0 +1,246 @@
+Общие стили
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #4285f4;
+    --accent-color: #8ab4f8;
+    --text-color: #202124;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(26, 115, 232, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Стили для маршрутов */
+.routes-section {
+    padding: 4rem 2rem;
+    background: var(--light-bg);
+}
+
+.routes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.route-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(26, 115, 232, 0.1);
+}
+
+.route-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(26, 115, 232, 0.15);
+    border-color: var(--primary-color);
+}
+
+.route-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.route-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.route-card:hover .route-image img {
+    transform: scale(1.05);
+}
+
+.route-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.difficulty {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.difficulty.easy { background: var(--primary-color); }
+.difficulty.medium { background: var(--secondary-color); }
+.difficulty.hard { background: var(--accent-color); }
+.difficulty.expert { background: #174ea6; }
+
+.route-info {
+    padding: 1.5rem;
+}
+
+.route-info h3 {
+    margin: 0 0 1rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.route-details {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.route-details li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.route-details i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+/* Стили для животных */
+.animals-section {
+    padding: 4rem 2rem;
+    background: var(--light-bg);
+}
+
+.animals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.animal-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(26, 115, 232, 0.1);
+}
+
+.animal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(26, 115, 232, 0.15);
+    border-color: var(--primary-color);
+}
+
+.animal-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.animal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.animal-card:hover .animal-image img {
+    transform: scale(1.05);
+}
+
+.animal-info {
+    padding: 1.5rem;
+}
+
+.animal-info h3 {
+    margin: 0 0 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.scientific-name {
+    color: var(--secondary-color);
+    font-style: italic;
+    margin: 0 0 1rem;
+}
+
+.animal-details {
+    margin-top: 1rem;
+}
+
+.animal-details p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+}
+
+.animal-details strong {
+    color: var(--primary-color);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .routes-grid,
+    .animals-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .route-image,
+    .animal-image {
+        height: 180px;
+    }
+
+    .route-info h3,
+    .animal-info h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .routes-section,
+    .animals-section {
+        padding: 2rem 1rem;
+    }
+
+    .routes-grid,
+    .animals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .route-image,
+    .animal-image {
+        height: 200px;
+    }
+}
+
+/* Анимации */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Эффекты при наведении */
+.info-card:hover,
+.feature:hover,
+.animal-card:hover,
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(26, 115, 232, 0.15);
+    transition: all 0.3s ease;
+}
+
+.animal-image img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+} 
